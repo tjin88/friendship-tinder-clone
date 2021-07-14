@@ -12,15 +12,17 @@ function Header () {
                 <PersonOutlineIcon fontSize = "large" className = "header__icon"/>
             </IconButton>
 
-            {/* <img
-                className = "header__logo"
-                src = "https://www.citypng.com/public/uploads/preview/-11595270396ei6vchptvb.png"
-                alt = ""
-            /> */}
-
             <IconButton>
-                <WhatshotIcon fontSize = "large" className = "header__fireIcon"/>
+                <img
+                    className = "header__logo"
+                    src = "https://www.citypng.com/public/uploads/preview/-11595270396ei6vchptvb.png"
+                    alt = ""
+                />
             </IconButton>
+
+            {/* <IconButton>
+                <WhatshotIcon fontSize = "large" className = "header__fireIcon"/>
+            </IconButton> */}
 
             <IconButton>
                 <ForumIcon fontSize = "large" className = "header__icon"/>

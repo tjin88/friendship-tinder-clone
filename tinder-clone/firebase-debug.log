@@ -1,0 +1,21 @@
+[debug] [2021-07-14T01:52:18.510Z] ----------------------------------------------------------------------
+[debug] [2021-07-14T01:52:18.513Z] Command:       /usr/local/bin/node /usr/local/bin/firebase init
+[debug] [2021-07-14T01:52:18.513Z] CLI Version:   9.16.0
+[debug] [2021-07-14T01:52:18.513Z] Platform:      darwin
+[debug] [2021-07-14T01:52:18.513Z] Node Version:  v14.16.0
+[debug] [2021-07-14T01:52:18.514Z] Time:          Tue Jul 13 2021 21:52:18 GMT-0400 (Eastern Daylight Time)
+[debug] [2021-07-14T01:52:18.515Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-07-14T01:52:18.522Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-07-14T01:52:18.522Z] > authorizing via signed-in user (tjin368@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/tristanjin/friendship-webapp/tinder-clone
+
