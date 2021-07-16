@@ -3,7 +3,7 @@ import './Header.css';
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import ForumIcon from  '@material-ui/icons/Forum';
 import IconButton from '@material-ui/core/IconButton';
-import WhatshotIcon from '@material-ui/icons/Whatshot';
+// import WhatshotIcon from '@material-ui/icons/Whatshot';
 
 function Header () {
     return (
