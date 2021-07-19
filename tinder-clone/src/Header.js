@@ -15,7 +15,8 @@ function Header () {
             <IconButton>
                 <img
                     className = "header__logo"
-                    src = "https://www.citypng.com/public/uploads/preview/-11595270396ei6vchptvb.png"
+                    // src = "https://us.123rf.com/450wm/estherpoon/estherpoon1803/estherpoon180300014/97459364-heart-handshake-icon.jpg"
+                    src = "https://img.icons8.com/ios/452/friends.png"
                     alt = ""
                 />
             </IconButton>
