@@ -6,7 +6,7 @@ import Cards from './dbCards.js'
 
 // App Config
 const app = express();
-const port = process.env.PORT || 8002
+const port = process.env.PORT || 8002   // Mistake??
 const connection_url = `mongodb+srv://admin:DEwa7w7Cg0ZTPvuZ@cluster0-tester.lnm4d.mongodb.net/tinderdb?retryWrites=true&w=majority`
 
 // Middlewares
@@ -48,5 +48,21 @@ app.get('/tinder/cards', (req,res) => {
 
 // Listener
 app.listen(port,() => console.log(`Listening on localhost: ${port}`));
+// app.listen(port)
 
 /* user: admin, password: DEwa7w7Cg0ZTPvuZ "tinderdb" = database name*/
+
+/* export const swipedDB = (cardName, swiperName, direction) => {
+    app.post('/tinder/cards', (req,res) => {
+        const dbSwipeDirection = [swiperName, direction];     // This name is of the swiper
+        if (direction.equals("right") || direction.equals("left")) {    //tests the edge cases of up or down
+            const query = { name: cardName };
+            const updateDocument = {
+              $push: { swipe: {swiperName: swiperName, direction: direction} }
+            };
+
+            // const result = await direction.updateOne(query, updateDocument);    //This is to be added to the card
+            const result = direction.updateOne(query, updateDocument);    //This is to be added to the card
+        }
+    })
+} */
