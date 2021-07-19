@@ -6,6 +6,9 @@ import axios from './axios';
 
 function TinderCards () {
     const [people, setPeople] = useState([]);
+    const [lastDirection, setLastDirection] = useState();
+    const [currentPerson, setCurrentPerson] = useState();
+    const alreadyRemoved = [];
 
     useEffect(() => {
         async function fetchData() {
@@ -17,18 +20,31 @@ function TinderCards () {
         fetchData();
     }, []);
 
-    console.log(people)
-
-    const swiped = (cardName, swiperName, direction ) => {
-        console.log('removing: ' + cardName);
+    const swiped = (direction, cardName ) => {
         console.log(cardName + ' was swiped ' + direction);
-        // swipedDB(cardName, swiperName, direction);
-        // setLastDirection(direction);
+        setLastDirection(direction)
+        setCurrentPerson(cardName)
+        // alreadyRemoved.push(cardName)
     }
 
     const outOfFrame = (cardName) => {
         console.log(cardName + " left the screen");
+        alreadyRemoved.push(cardName)
     }
+
+    // const swipe = (dir) => {
+    //     // console.log("already Removed = " + alreadyRemoved)
+    //     const cardsLeft = people.filter(person => !alreadyRemoved.includes(person.name))
+    //     // console.log("cardsLeft:" + cardsLeft)
+    //     if (cardsLeft.length) {
+    //       const toBeRemoved = cardsLeft[cardsLeft.length - 1].name // Find the card object to be removed
+    //       const index = people.map(person => person.name).indexOf(toBeRemoved) // Find the index of which to make the reference to
+    //       alreadyRemoved.push(toBeRemoved) // Make sure the next card gets removed next time if this card do not have time to exit the screen
+    //     //   console.log("index = " + index  + ", people[index].name = " + people[index].name + ", alreadyRemoved = " + alreadyRemoved)
+    //       people[index].name.swipe(dir) // Swipe the card!
+    //     //   setPeople(people);
+    //     }
+    //   }
 
     return (
         <div className = "tinderCards">
@@ -43,10 +59,11 @@ function TinderCards () {
                     </div>
                     {/* if person.swiped == user.name --> pop-up appears: Matched! */}
                 </TinderCard>
+
                 {people.map((person) => (
                     // <div className = "cardAndBio">
                     <TinderCard
-                       className = 'swipe'
+                       className = 'default swipe'
                        key = {person.name}
                        preventSwipe = {['up', 'down']}
                        onSwipe = {(dir) => swiped(dir, person.name)}
@@ -62,7 +79,13 @@ function TinderCards () {
                 ))}
             </div>
 
-            
+            {/* <div className='buttons'>
+                    <button onClick={() => swipe('left')}>Swipe left!</button>
+                    <button onClick={() => swipe('right')}>Swipe right!</button>
+            </div> */}
+
+            {lastDirection ? <h2 key={lastDirection} className='infoText'>You swiped {lastDirection} on {currentPerson}</h2> : <h2 className='infoText'>Swipe a card to get started!</h2>}
+
         </div>
     );
 }
