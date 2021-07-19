@@ -52,11 +52,11 @@
 
 .infoText {
     position: fixed;
-    bottom: 13vh;
+    bottom: 10vh;
     display: flex;
     width: 100%;
     justify-content: space-evenly;
-    color: black;
+    color: firebrick;
     text-align: center;
     font-size: 4vh;
     z-index: 10;
