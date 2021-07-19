@@ -6,6 +6,24 @@
     justify-content: space-evenly;
 }
 
+.swipeButtons > form > input {
+    margin-right: 10px;
+    height: 25px;
+    width: 200px;
+    background-color: white;
+}
+
+.swipeButtons > form > button {
+    background: lightpink;
+    border-radius: 2px;
+    border: 1px solid;
+    margin-left: 10px;
+    border-color: rgb(218, 134, 146);
+    height: 30px;
+    width: 200px;
+    box-shadow: lightslategray;
+}
+
 .swipeButtons .MuiIconButton-root {
     background-color: white;
     box-shadow: 0px 10px 53px 0px rgba(0, 0, 0, 0.3);

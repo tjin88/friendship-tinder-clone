@@ -17,15 +17,17 @@ function SwipeButtons () {
     const sendMessage = async (e) => {
         e.preventDefault();
 
-        await axios.post('/tinder/cards', {
-            name: name,
-            imgUrl: url,       //This was hard coded
-            bio: biography,
-        });
-
-        setName("");
-        setUrl("");
-        setBiography("");
+        if (name !== "" || url !== "") {
+            await axios.post('/tinder/cards', {
+                name: name,
+                imgUrl: url,       //This was hard coded
+                bio: biography,
+            });
+    
+            setName("");
+            setUrl("");
+            setBiography("");
+        }
     }
     return (
         <div className = "swipeButtons">
@@ -42,7 +44,7 @@ function SwipeButtons () {
                 <input value={name} onChange={e => setName(e.target.value)} placeholder="Enter your name" type="text"/>
                 <input value={url} onChange={e => setUrl(e.target.value)} placeholder="Enter the image url" type="text"/>
                 <input value={biography} onChange={e => setBiography(e.target.value)} placeholder="Enter a biography!" type="text"/>
-                <button onClick={sendMessage} type="submit">Add new profile</button>
+                <button classname = "submitButton" onClick={sendMessage} type="submit">Add new profile</button>
             </form>
             {/* <IconButton className = "swipeButtons__star">   {/* Star --> Super like ****|}
                 <StarRateIcon fontSize = "large" />
